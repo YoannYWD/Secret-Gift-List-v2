@@ -27,7 +27,7 @@ class UserAuthController extends Controller
                              ->with('success', 'Utilisateur connecté.');
         }
 
-        return redirect('/login')->with('success', 'Votre email ou mot de passe est incorrect.');
+        return redirect('/login')->with('alert', 'Votre email ou mot de passe est incorrect.');
     }
 
     public function registration() {
@@ -71,7 +71,7 @@ class UserAuthController extends Controller
         if(Auth::check()) {
             return view('groups/index');
         }
-        return redirect('auth/login')->with('success', "Vous n'êtes pas connecté.");
+        return redirect('auth/login')->with('alert', "Vous n'êtes pas connecté.");
     }
 
     public function signOut() {

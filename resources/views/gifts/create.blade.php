@@ -22,7 +22,7 @@
                         </div>
 
                         <div class="form-group mb-3">
-                            <input type="number" placeholder="Prix" class="form-control" name="price" required autofocus>
+                            <input type="number" placeholder="Prix" class="form-control" name="price" min="0" required autofocus>
                             @if($errors->has('price'))
                             <span class="text-danger">{{$errors->first('price')}}</span>
                             @endif
@@ -41,7 +41,6 @@
                         </div>
 
                         <div class="d-grid mx-auto">
-                            <input type="hidden" name="posted_by_user_id" value="{{auth()->id()}}">
                             <input type="hidden" name="for_user_id" value="{{$for_user_id}}">
                             <button type="submit" class="btn btn-dark btn-block">Enregistrer</button>
                         </div>
@@ -71,7 +70,7 @@
 
         <!-- AFFICHAGE DE TOUS LES CADEAUX PROPOSES POUR CET UTILISATEUR -->
         @foreach($gifts as $gift)
-        <div class="col-md-4">
+        <div class="col-md-4 mt-3 mb-2">
             <div class="card">
                 <img src="{{$gift->image}}" class="card-img-top" alt="Image de {{$gift->name}}">
                 <div class="card-body">
@@ -80,7 +79,7 @@
                     <p class="card-text">{{$gift->price}}€</p>
                     <form action="{{route('commentaires.create')}}" method="GET">
                         @csrf
-                        <input type="hidden" value="{{$gift->id}}" name="id">
+                        <input type="hidden" value="{{$gift->id}}" name="gift_id">
                         <button type="submit" class="btn btn-primary mb-2">Commenter</button>
                     </form>
                     @if($gift->posted_by_user_id == auth()->id())
@@ -88,7 +87,7 @@
                             @csrf
                             <input type="hidden" name="for_user_id" value="{{$for_user_id}}">
                             <input type="hidden" name="id" value="{{$gift->id}}">
-                            <button type="submit" class="btn btn-danger mb-2">Editer</button>
+                            <button type="submit" class="btn btn-primary mb-2">Editer</button>
                         </form>
                         <form action="{{route('accueil.destroy', $gift->id)}}" method="POST">
                             @csrf

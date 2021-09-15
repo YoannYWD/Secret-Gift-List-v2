@@ -9,6 +9,11 @@
     <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
+    <!-- STYLE -->
+    <link rel="stylesheet" href="{{ URL::asset('css/style.css') }} ">
+
+
+
 </head>
 <body>
 
@@ -57,6 +62,18 @@
             @if(session()->get("success"))
                 <div class="alert alert-success">
                     {{ session()->get("success") }}
+                </div><br />
+            @endif
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-4 offset-4 text-center">
+            @if(session()->get("alert"))
+                <div class="alert alert-danger">
+                    {{ session()->get("alert") }}
                 </div><br />
             @endif
         </div>

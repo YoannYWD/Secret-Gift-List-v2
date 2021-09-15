@@ -45,7 +45,7 @@ class GiftController extends Controller
         $newGift->price = $request->price;
         $newGift->description = $request->description;
         $newGift->image = '/images/' . $imageName;
-        $newGift->posted_by_user_id = $request->posted_by_user_id;
+        $newGift->posted_by_user_id = $request->auth()->id();
         $newGift->for_user_id = $request->for_user_id;
         $newGift->save();
 

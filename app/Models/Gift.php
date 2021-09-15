@@ -20,9 +20,9 @@ class Gift extends Model
 
     //Cardinalité
     public function user() {
-        return $this->hasMany(User::class, 'posted_by_user_id');
+        return $this->hasMany(User::class);
     }
     public function comments() {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class, 'gifts', 'posted_by_user_id', 'gift_id');
     }
 }

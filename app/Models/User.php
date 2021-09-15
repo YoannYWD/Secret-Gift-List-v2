@@ -55,6 +55,6 @@ class User extends Authenticatable
         return $this->hasMany(Gift::class);
     }
     public function comments() {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class, 'users', 'id', 'user_id');
     }
 }

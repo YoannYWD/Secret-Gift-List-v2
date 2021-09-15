@@ -42,7 +42,7 @@
                         </div>
 
                         <div class="form-group mb-3">
-                        <img src="{{$user[0]->image}}" alt="Photo de {{$user[0]->nickname}}">
+                            <img src="{{$user[0]->image}}" alt="Photo de {{$user[0]->nickname}}">
                         </div>
 
                         <div class="form-group mb-3">
