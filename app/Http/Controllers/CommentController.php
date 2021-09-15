@@ -20,10 +20,8 @@ class CommentController extends Controller
                         ->join('gifts', 'gifts.id', '=', 'comments.gift_id')
                         ->select('comments.id', 'comments.content', 'comments.user_id', 'comments.created_at', 'users.nickname as user_nickname')
                         ->where('comments.gift_id', '=', $gift_id)
-                        ->get();
-
-        $commentaires = Comment::all();
-        return view('comments/create', compact('gift', 'comments', 'commentaires'));
+                        ->get();    
+        return view('comments/create', compact('gift', 'comments'));
     }
 
     //ENREGISTRER LE COMMENTAIRE
