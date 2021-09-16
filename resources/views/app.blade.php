@@ -17,9 +17,9 @@
 </head>
 <body>
 
-<nav class="navbar navbar-light navbar-expand-lg mb-5" style="background-color: #97B6C8;">
+<nav class="navbar navbar-expand-lg">
     <div class="container">
-        <a class="navbar-brand mr-auto" href="{{route('accueil.index')}}">SGL</a>
+        <!-- <a class="navbar-brand mr-auto" href="{{route('accueil.index')}}">SGL</a> -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -56,6 +56,12 @@
     </div>
 </nav>
 
+<div class="container-fluid mt-5 mb-5 headPage">
+    <div class="row">
+        <h1 class="text-center">SECRET <span class="blue">GIFT</span> LIST</h1>
+    </div>
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-4 offset-4 text-center">
@@ -85,7 +91,9 @@
 </div>
 
 
-
+<footer>
+<p class="text-center">© YWebDev 2021.</p>
+</footer>
 
     <!-- BOOTSTRAP -->   
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>

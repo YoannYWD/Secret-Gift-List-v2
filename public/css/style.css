@@ -1,9 +1,164 @@
+/*
+COLORS
+- DARK BLUE : #161B40
+- BLUE : #43BEE5
+- RED : #F40058
+- YELLOW : #EFA500
+- GREEN : #41B853
+- WHITE : #FFFFFF
+
+
+FONTS
+
+
+INDEX
+- IMPORTS
+- GENERAL
+- NAVBAR
+- HEADPAGE
+- CARDS
+- PROFILE PAGE
+
+
+- FOOTER
+
+*/
+
+/* IMPORTS */
+@font-face {
+    font-family: 'Neutra';
+    src: url('/css/fonts/neutra/Neutra Text Book.otf');
+}
+@font-face {
+    font-family: 'NeutraBold';
+    src: url('/css/fonts/neutra/Neutra-Text-TF-Light-SC-Demi_32158.ttf');
+}
+@font-face {
+    font-family: 'NeutraLight';
+    src: url('/css/fonts/neutra/Neutra-Text-Light_32131.ttf');
+}
+@font-face {
+    font-family: 'HarrietBold';
+    src: url('/css/fonts/harriet/harrietbold.otf');
+}
+
+
+
+/* GENERAL */
+
 body {
-    background-color: #97B6C8;
+    background-color: #161B40;
+}
+
+span.blue {
+    color: #43BEE5;
+}
+span.red {
+    color:#F40058;
+}
+span.green {
+    color:#41B853;
+}
+span.yellow {
+    color:#EFA500;
+}
+
+p {
+    font-family: HarrietBold, Arial, Helvetica, sans-serif;
+}
+
+
+
+/* NAVBAR */
+
+nav {
+    color: #FFFFFF;
+    font-family: Neutra, Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    text-transform: capitalize;
+}
+
+nav a {
+    color: #FFFFFF!important;
+}
+
+nav a:hover {
+    color: #43BEE5!important;
+}
+
+
+
+/* HEADPAGE */
+
+.headPage {
+    color: #FFFFFF;
+    font-family: NeutraBold, Arial, Helvetica, sans-serif;
+}
+
+.headPage h1 {
+    font-size: 6rem;
+}
+
+
+
+/* CARDS */
+
+p.intro {
+    color: #FFFFFF;
+    font-size: 2em;
 }
 
 img {
     height: 150px;
     border-radius: 50%;
-    border: 2px solid #97B6C8;
+}
+
+.card h5 {
+    font-family: NeutraBold, Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: #161B40;
+}
+
+.card {
+    border: none;
+    transition: 0.5s;
+}
+.card:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+button.btnCards {
+    border: 2px solid #161B40;
+    font-style: HarrietBold, Arial, Helvetica, sans-serif;;
+    color: #161B40;
+}
+button.btnCards:hover {
+    background-color: #161B40;
+    color: #FFFFFF;
+}
+
+
+
+/* PROFILE PAGE */
+.profileContainer p {
+    font-style: HarrietBold, Arial, Helvetica, sans-serif;;
+    color: #FFFFFF;
+}
+
+button.btnProfile {
+    border: 2px solid #41B853;
+    font-style: HarrietBold, Arial, Helvetica, sans-serif;
+    color: #FFFFFF;
+}
+button.btnProfile:hover {
+    background-color: #41B853;
+    color: #FFFFFF;
+}
+
+
+
+/* FOOTER */
+footer p {
+    color: #FFFFFF;
 }
