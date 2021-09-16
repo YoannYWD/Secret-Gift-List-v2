@@ -38,7 +38,7 @@ class CommentController extends Controller
     public function edit(Request $request, $id) {
         $gift_id = $request->gift_id;
         $comment = Comment::findOrFail($id);
-        return view('comments.edit', compact('comment', 'gift_id'));
+        return view('comments.create', compact('comment'));
     }
 
     //MISE A JOUR DU COMMENTAIRE

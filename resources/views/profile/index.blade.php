@@ -2,10 +2,10 @@
 
 @section('content')
 
+<!-- FORMULAIRE MODIFICATION PROFIL-->
 <div class="container mt-5">
     <div class="row mb-4">
         <h1 class="text-center">Mon profil</h1>
-        <!-- FORMULAIRE MODIFICATION PROFIL-->
         <div class="col-md-4 offset-4">
             <div class="card">
                 <h3 class="card-header text-center">Modifier</h3>
@@ -13,6 +13,7 @@
                     <form action="{{route('mon-profil.update', auth()->id())}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PATCH')
+                        <!-- nom -->
                         <div class="form-group mb-3">
                             <input type="text" placeholder="Nom" class="form-control" name="lastname" value="{{$user[0]->lastname}}" required autofocus>
                             @if($errors->has('lastname'))
@@ -20,6 +21,7 @@
                             @endif
                         </div>
 
+                        <!-- prénom -->
                         <div class="form-group mb-3">
                             <input type="text" placeholder="Nom" class="form-control" name="firstname" value="{{$user[0]->firstname}}" required autofocus>
                             @if($errors->has('firstname'))
@@ -27,6 +29,7 @@
                             @endif
                         </div>
 
+                        <!-- pseudo -->
                         <div class="form-group mb-3">
                             <input type="text" placeholder="Nom" class="form-control" name="nickname" value="{{$user[0]->nickname}}" required autofocus>
                             @if($errors->has('nickname'))
@@ -34,6 +37,7 @@
                             @endif
                         </div>
 
+                        <!-- email -->
                         <div class="form-group mb-3">
                             <input type="text" placeholder="Nom" class="form-control" name="email" value="{{$user[0]->email}}" required autofocus>
                             @if($errors->has('email'))
@@ -41,15 +45,16 @@
                             @endif
                         </div>
 
+                        <!-- avatar -->
                         <div class="form-group mb-3">
                             <img src="{{$user[0]->image}}" alt="Photo de {{$user[0]->nickname}}">
                         </div>
-
                         <div class="form-group mb-3">
                             <label for="formFile" class="form-label">Image</label>
                             <input class="form-control" type="file" name="image">
                         </div>
 
+                        <!-- wish1 -->
                         <div class="form-group mb-3">
                             <input type="text" placeholder="Mon 1er souhait" class="form-control" name="wish1" value="{{$user[0]->wish1}}" autofocus>
                             @if($errors->has('wish1'))
@@ -57,6 +62,7 @@
                             @endif
                         </div>
 
+                        <!-- wish2 -->
                         <div class="form-group mb-3">
                             <input type="text" placeholder="Mon 2ème souhait" class="form-control" name="wish2" value="{{$user[0]->wish2}}" autofocus>
                             @if($errors->has('wish2'))
@@ -64,6 +70,7 @@
                             @endif
                         </div>
 
+                        <!-- wish3 -->
                         <div class="form-group mb-3">
                             <input type="text" placeholder="Mon 3ème souhait" class="form-control" name="wish3" value="{{$user[0]->wish3}}" autofocus>
                             @if($errors->has('wish3'))
@@ -71,13 +78,15 @@
                             @endif
                         </div>
 
+                        <!-- wish4 -->
                         <div class="form-group mb-3">
                             <input type="text" placeholder="Mon 4ème souhait" class="form-control" name="wish4" value="{{$user[0]->wish4}}" autofocus>
                             @if($errors->has('wish4'))
                             <span class="text-danger">{{$errors->first('wish4')}}</span>
                             @endif
                         </div>
-
+                        
+                        <!-- wish5 -->
                         <div class="form-group mb-3">
                             <input type="text" placeholder="Mon 5ème souhait" class="form-control" name="wish5" value="{{$user[0]->wish5}}" autofocus>
                             @if($errors->has('wish5'))

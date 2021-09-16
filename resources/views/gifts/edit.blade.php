@@ -2,6 +2,7 @@
 
 @section('content')
 
+<!-- BOUTON RETOUR A LA PAGE CREATION DE CADEAU DU BENEFICIAIRE SELECTIONNE -->
 <form action="{{route('accueil.create')}}" method="GET">
     @csrf
     <input type="hidden" name="for_user_id" value="{{$gift->for_user_id}}">
@@ -19,6 +20,7 @@
                     <form action="{{route('accueil.update', $gift->id)}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PATCH')
+                        <!-- nom -->
                         <div class="form-group mb-3">
                             <input type="text" placeholder="Nom" class="form-control" name="name" value="{{$gift->name}}" required autofocus>
                             @if($errors->has('name'))
@@ -26,6 +28,7 @@
                             @endif
                         </div>
 
+                        <!-- prix -->
                         <div class="form-group mb-3">
                             <input type="number" placeholder="Prix" class="form-control" name="price" value="{{$gift->price}}" required autofocus>
                             @if($errors->has('price'))
@@ -33,13 +36,15 @@
                             @endif
                         </div>
 
-                        <div class="form-group mb-3">
+                        <!-- description -->
+                            <div class="form-group mb-3">
                             <input type="text" placeholder="Description" class="form-control" name="description" value="{{$gift->description}}" required autofocus>
                             @if($errors->has('description'))
                             <span class="text-danger">{{$errors->first('description')}}</span>
                             @endif
                         </div>
-                        
+
+                        <!-- image -->
                         <div class="form-group mb-3">
                             <label for="formFile" class="form-label">Image</label>
                             <input class="form-control" type="file" name="image">

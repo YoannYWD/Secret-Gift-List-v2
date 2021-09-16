@@ -19,12 +19,23 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
+//ARRIVEE SUR LE SITE
+Route::get('/', function () {
+    return redirect('/accueil');
+});
+
+//AUTHENTIFICATION
 Route::get('/login', [UserAuthController::class, 'index'])->name('login');
 Route::post('/user-login', [UserAuthController::class, 'userLogin'])->name('userLogin');
 Route::get('/registration', [UserAuthController::class, 'registration'])->name('registration');
 Route::post('/user-registration', [UserAuthController::class, 'userRegistration'])->name('userRegistration');
 Route::get('/user-signout', [UserAuthController::class, 'signout'])->name('signout');
 
+//ACCUEIL AVEC GROUPE + PAGE CADEAUX CRUD
 Route::resource('/accueil', GiftController::class)->middleware('auth')->except('show');
+
+//COMMENTAIRES CRUD
 Route::resource('/accueil/commentaires', CommentController::class)->middleware('auth')->except('show');
+
+//PROFIL UTILISATEUR
 Route::resource('/accueil/mon-profil', ProfileController::class)->middleware('auth')->except('show');

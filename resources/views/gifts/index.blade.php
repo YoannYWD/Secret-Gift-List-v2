@@ -2,11 +2,11 @@
 
 @section('content')
 
+<!-- PAGE ACCUEIL AVEC LISTE DES GROUPES VISIBLES -->
 <div class="container">
     <div class="row">
-
         <h1 class="text-center">Bienvenue</h1>
-        
+       
         @foreach($users as $user)
             @if($user->id !== auth()->id())
                 <div class="col-md-6 col-xl-4 mt-5 mb-4">
