@@ -10,14 +10,14 @@
         @foreach($users as $user)
             @if($user->id !== auth()->id())
                 <div class="col-md-6 col-xl-4 mt-5 mb-4">
-                    <div class="card">
+                    <div class="card cardIndex">
                         <div class="card-body text-center ">
                             <h5 class="card-title">Cadeaux pour <span class="blue">{{$user->nickname}}</h5>
                             <img src="{{$user->image}}" alt="Photo de {{$user->nickname}}" class="mb-4 mt-4">
                             <form action="{{route('accueil.create')}}" method="GET">
                                 @csrf
                                 <input type="hidden" name="for_user_id" value="{{$user->id}}">
-                                <button type="submit" class="btn btnCards"><p class="mb-0">Voir les cadeaux</p></button>
+                                <button type="submit" class="btn btnDarkBlue"><p class="mb-0">Voir les cadeaux</p></button>
                             </form>
                         </div>
                     </div>

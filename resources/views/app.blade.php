@@ -12,6 +12,8 @@
     <!-- STYLE -->
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }} ">
 
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
 
 
 </head>
@@ -20,7 +22,7 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container">
         <!-- <a class="navbar-brand mr-auto" href="{{route('accueil.index')}}">SGL</a> -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler custom-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -49,20 +51,20 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('signout')}}">se déconnecter</a>
                 </li>
-
             </ul>
             @endguest
         </div>
     </div>
 </nav>
 
-<div class="container-fluid mt-5 mb-5 headPage">
-    <div class="row">
+<div class="container-fluid mt-5 mb-5 headPage text-center">
+    <!-- <div class="row">
         <h1 class="text-center">SECRET <span class="blue">GIFT</span> LIST</h1>
-    </div>
+    </div> -->
+    <img src="/images/logo.png" alt="Logo">
 </div>
 
-<div class="container">
+<div class="container mt-5 mb-0">
     <div class="row">
         <div class="col-4 offset-4 text-center">
             @if(session()->get("success"))
@@ -74,7 +76,7 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container mt-5 mb-0">
     <div class="row">
         <div class="col-4 offset-4 text-center">
             @if(session()->get("alert"))
@@ -92,7 +94,12 @@
 
 
 <footer>
-<p class="text-center">© YWebDev 2021.</p>
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <p class="text-center">© YWebDev 2021.</p>
+
+        </div>
+    </div>
 </footer>
 
     <!-- BOOTSTRAP -->   

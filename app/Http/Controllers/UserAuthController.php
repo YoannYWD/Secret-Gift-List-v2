@@ -24,10 +24,10 @@ class UserAuthController extends Controller
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             return redirect()->intended('/accueil')
-                             ->with('success', 'Utilisateur connecté.');
+                             ->with('success', 'Tu es connecté !');
         }
 
-        return redirect('/login')->with('alert', 'Votre email ou mot de passe est incorrect.');
+        return redirect('/login')->with('alert', 'Ton email ou mot de passe est incorrect.');
     }
 
     public function registration() {
@@ -47,7 +47,7 @@ class UserAuthController extends Controller
         $data = $request->all();
         $this->createUser($data);
 
-        return redirect('/login')->with('success', 'Vous êtes enregistré.');
+        return redirect('/login')->with('success', 'Tu es enregistré !');
     }
 
     public function createUser(array $data) {

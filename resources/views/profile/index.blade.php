@@ -89,15 +89,15 @@
             </div>
 
             <!-- wish5 -->
-                <div class="form-group mb-3">
+            <div class="mb-3">
                 <input type="text" placeholder="5ème souhait" class="form-control" name="wish5" value="{{$user[0]->wish5}}" autofocus>
                 @if($errors->has('wish5'))
                 <span class="text-danger">{{$errors->first('wish5')}}</span>
                 @endif
             </div>
 
-            <div class="d-grid mx-auto">
-                <button type="submit" class="btn btnProfile"><p class="mb-0">Enregistrer les modifications</p></button>
+            <div class="d-grid mt-5 mx-auto">
+                <button type="submit" class="btn btnGreen"><p class="mb-0">Enregistrer les modifications</p></button>
             </div>
         </form>
     </div>
